@@ -18,26 +18,23 @@
         <section class="client-selection">  
             <h2>Select Your Client</h2>  
             <div class="client-option">  
-                <h3>Client 1</h3>  
-                <p>Brief description of client 1.</p>  
-                <a href="#" class="download-button">Download Client 1</a>  
+                <input type="radio" id="client1" name="client" value="Client1">  
+                <label for="client1">Client 1 - Brief description of client 1.</label>  
             </div>  
             <div class="client-option">  
-                <h3>Client 2</h3>  
-                <p>Brief description of client 2.</p>  
-                <a href="#" class="download-button">Download Client 2</a>  
+                <input type="radio" id="client2" name="client" value="Client2">  
+                <label for="client2">Client 2 - Brief description of client 2.</label>  
             </div>  
             <div class="client-option">  
-                <h3>Client 3</h3>  
-                <p>Brief description of client 3.</p>  
-                <a href="#" class="download-button">Download Client 3</a>  
+                <input type="radio" id="client3" name="client" value="Client3">  
+                <label for="client3">Client 3 - Brief description of client 3.</label>  
             </div>  
         </section>  
 
         <section class="launch-section">  
             <h2>Zyth Launcher</h2>  
             <p>All the best Eagler clients and more.</p>  
-            <a href="#" class="launch-button">Launch</a>  
+            <button class="launch-button" onclick="launchClient()">Launch</button>  
         </section>  
     </main>  
 
@@ -45,6 +42,19 @@
         <p>&copy; 2025 Eaglercraft. All rights reserved.</p>  
         <p><a href="#">Support</a> | <a href="#">Privacy Policy</a></p>  
     </footer>  
+
+    <script>  
+        function launchClient() {  
+            const selectedClient = document.querySelector('input[name="client"]:checked');  
+            if (selectedClient) {  
+                alert(`Launching ${selectedClient.value}`);  
+                // Here you would add the actual code to launch the selected client  
+                // e.g., window.location.href = selectedClient.value;   
+            } else {  
+                alert('Please select a client to launch.');  
+            }  
+        }  
+    </script>  
 </body>  
 
 </html>  
